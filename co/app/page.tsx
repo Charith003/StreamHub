@@ -16,7 +16,7 @@ const events = [
   {
     id: "1",
     title: "lofi hip hop radio - beats to relax/study to",
-    thumbnail: "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?w=600&h=340&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=900&h=510&fit=crop&auto=format",
     viewerCount: 12453,
     isLive: true,
     duration: "5h 23m",
@@ -138,7 +138,7 @@ const events = [
   {
     id: "13",
     title: "Indie Game Showcase - Hidden Gems",
-    thumbnail: "https://images.unsplash.com/photo-1493711662062-fa541f7f3d24?w=600&h=340&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1542751110-97427bbecf20?w=900&h=510&fit=crop&auto=format",
     viewerCount: 3456,
     isLive: true,
     duration: "1h 45m",
@@ -260,7 +260,7 @@ const events = [
   {
     id: "25",
     title: "History Deep Dive - Ancient Civilizations",
-    thumbnail: "https://images.unsplash.com/photo-1461360370896-922624d12a74?w=600&h=340&fit=crop",
+    thumbnail: "https://images.unsplash.com/photo-1460186136353-977e9d6085a1?w=900&h=510&fit=crop&auto=format",
     viewerCount: 4123,
     isLive: true,
     duration: "1h 40m",
@@ -350,7 +350,12 @@ function EventCard({ event, index, viewMode }: { event: typeof events[0]; index:
           <img
             src={event.thumbnail}
             alt={event.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            className="w-full h-full object-cover bg-muted transition-transform duration-500 group-hover:scale-110"
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "high" : "auto"}
+            onError={(e) => {
+              e.currentTarget.src = "/placeholder.jpg";
+            }}
           />
           {event.isLive && (
             <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 rounded bg-live text-white text-xs font-bold uppercase">
@@ -405,9 +410,14 @@ function EventCard({ event, index, viewMode }: { event: typeof events[0]; index:
           src={event.thumbnail}
           alt={event.title}
           className={cn(
-            "w-full h-full object-cover transition-transform duration-500",
+            "w-full h-full object-cover bg-muted transition-transform duration-500",
             isHovered && "scale-110"
           )}
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : "auto"}
+          onError={(e) => {
+            e.currentTarget.src = "/placeholder.jpg";
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         
