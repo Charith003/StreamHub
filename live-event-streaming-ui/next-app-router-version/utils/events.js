@@ -1,0 +1,38 @@
+export const EVENTS = [
+  {
+    id: '1',
+    title: 'Night Flow Sessions',
+    category: 'Lo-fi',
+    viewers: 12600,
+    cover: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1200&q=80',
+    description: 'Lo-fi beats and ambient visuals for coding, focus, and relaxed late-night sessions.',
+    isLive: true,
+  },
+  {
+    id: '2',
+    title: 'Creator Studio Live',
+    category: 'Talk Show',
+    viewers: 8400,
+    cover: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
+    description: 'Live interviews with designers and engineers building modern products.',
+    isLive: true,
+  },
+  {
+    id: '3',
+    title: 'Indie Dev Launch Party',
+    category: 'Gaming',
+    viewers: 5400,
+    cover: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+    description: 'Watch indie teams demo their latest game builds and interact with chat.',
+    isLive: true,
+  },
+  {
+    id: '4',
+    title: 'Studio Mix: Neon Waves',
+    category: 'Music',
+    viewers: 9700,
+    cover: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=80',
+    description: 'A curated synthwave and chillhop mix with immersive visuals.',
+    isLive: true,
+  },
+];

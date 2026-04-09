@@ -1,8 +1,6 @@
-'use client';
-
 import { useMemo, useState } from 'react';
 import EventCard from '../components/EventCard';
-import { EVENTS } from '../utils/events';
+import { EVENTS } from '../data/events';
 
 const CATEGORIES = ['All', ...new Set(EVENTS.map((event) => event.category))];
 
